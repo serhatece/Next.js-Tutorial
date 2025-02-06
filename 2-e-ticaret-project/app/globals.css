@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bgone {
+  @apply bg-white dark:bg-my-color-100;
+}
+
+.bgHeader {
+  @apply bg-my-color-300  hover:bg-my-color-300 
+  dark:text-black dark:bg-my-color-300
+  dark:hover:bg-my-color-300   !important;
+}
