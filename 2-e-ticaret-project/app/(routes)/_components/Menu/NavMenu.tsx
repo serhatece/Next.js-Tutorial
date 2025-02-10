@@ -12,12 +12,38 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { components } from "@/constans";
+import { usePathname } from "next/navigation";
+import { start } from "repl";
 
 const NavMenu = () => {
+  const pathName = usePathname();
+
   return (
     <div className="flex justify-center items-center py-2 bg-my-color-300">
       <NavigationMenu>
         <NavigationMenuList>
+          <NavigationMenuItem>
+            <Link href="/" legacyBehavior passHref>
+              <NavigationMenuLink
+                className={`${navigationMenuTriggerStyle()} bgHeader ${
+                  pathName === "/" ? "activeHeader" : ""
+                }`}
+              >
+                Home
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="/about" legacyBehavior passHref>
+              <NavigationMenuLink
+                className={`${navigationMenuTriggerStyle()} bgHeader ${
+                  pathName === "/about" ? "activeHeader" : ""
+                }`}
+              >
+                About Us
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuTrigger className="bgHeader">
               Recent Product
@@ -53,7 +79,11 @@ const NavMenu = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bgHeader">
+            <NavigationMenuTrigger
+              className={`bgHeader ${
+                pathName.startsWith("/shop") ? "activeHeader" : ""
+              }`}
+            >
               Categories
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -71,11 +101,13 @@ const NavMenu = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <Link href="/contact" legacyBehavior passHref>
               <NavigationMenuLink
-                className={`${navigationMenuTriggerStyle()} bgHeader`}
+                className={`${navigationMenuTriggerStyle()} bgHeader ${
+                  pathName === "/contact" ? "activeHeader" : ""
+                }`}
               >
-                Documentation
+                Contact
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>

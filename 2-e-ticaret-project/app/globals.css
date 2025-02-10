@@ -11,3 +11,7 @@
   dark:text-black dark:bg-my-color-300
   dark:hover:bg-my-color-300   !important;
 }
+
+.activeHeader {
+  @apply underline !important;
+}
