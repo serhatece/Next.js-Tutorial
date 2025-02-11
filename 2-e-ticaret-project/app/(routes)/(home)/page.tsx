@@ -1,5 +1,12 @@
 import React from "react";
+import Hero from "../_components/Hero";
+import ProductList from "../_components/Product.tsx/ProductList";
 
 export default function Home() {
-  return <>Home</>;
+  return (
+    <div>
+      <Hero />
+      <ProductList />
+    </div>
+  );
 }
