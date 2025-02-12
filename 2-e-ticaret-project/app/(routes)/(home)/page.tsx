@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "../_components/Hero";
 import ProductList from "../_components/Product.tsx/ProductList";
 
