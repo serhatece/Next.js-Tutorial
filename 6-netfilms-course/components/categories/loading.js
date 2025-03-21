@@ -1,5 +1,6 @@
 import Skeleton from "@/components/skeleton";
 import styles from "./styles.module.css";
+import React from "react";
 
 function CategoriesLoading() {
   return (
