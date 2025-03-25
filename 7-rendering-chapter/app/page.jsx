@@ -1,19 +1,20 @@
-"use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Button from "./button";
 
-function page() {
-  const [message, setMessage] = React.useState("initial");
-  useEffect(() => {
-    setMessage("use effect manipule etti");
-    console.log("useEffect");
-  }, []);
-  console.log("Page");
+export const getData = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+  return res.json();
+};
+
+async function page() {
+  const data = await getData();
+  console.log(data);
   return (
     <div>
+      <h1>Rendering</h1>
       Page
       <Button />
-      <p>{message}</p>
+      <h2>Data Fetching</h2>
     </div>
   );
 }
