@@ -1,4 +1,3 @@
-import React from "react";
 import { getData } from "./page";
 
 async function Head() {
