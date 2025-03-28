@@ -1,4 +1,5 @@
 import { getData } from "./page";
+import React from "react";
 
 async function Head() {
   const data = await getData();
